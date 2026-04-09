@@ -40,7 +40,7 @@ authSchema.pre("save",async function (next) {
     }
     
 })
-authSchema.method.comparePassword= async function(enteredPassword){
+authSchema.methods.comparePassword= async function(enteredPassword){
     return await bcrypt.compare(enteredPassword,this.password);
 }
 
