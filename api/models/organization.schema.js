@@ -19,7 +19,7 @@ const companySchema = new mongoose.Schema(
     },
 
     // database name (used in multi-tenant apps)
-    dbName: {
+    dbaName: {
       type: String,
       required: true,
     },
@@ -78,7 +78,7 @@ const companySchema = new mongoose.Schema(
   },
   {
     timestamps: true, // adds createdAt & updatedAt
-  }
+ },
 );
 
 // create model
