@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import authrouter from "./api/routes/auth.routes.js";
 import organizationrouter from "./api/routes/organization.routes.js";
 import cookieParser from "cookie-parser";
+import frameworkrouter from "./api/routes/framework.route.js";
 
 dotenv.config();
 const app = express();
@@ -12,8 +13,7 @@ app.use(express.json());
 app.use(cookieParser());
 //  routes:
 app.use("/api/auth", authrouter);
-
 app.use("/api/organization", organizationrouter);
-
+app.use("/api/framework", frameworkrouter);
 //  http://localhost:5000/api/auth/signup
 export default app;

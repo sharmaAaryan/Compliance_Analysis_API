@@ -53,7 +53,7 @@ export const signin = async (req, res, next) => {
     }
 
     //token generation
-    const token = await generateToken(user._id,user.userName);
+    const token = await generateToken(user._id,user.userName,user.role);
     console.log(token);
 
     return res

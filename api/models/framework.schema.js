@@ -26,7 +26,7 @@ const frameworkSchema = new mongoose.Schema(
     },
     country: String,
     appliesTo: {
-      type: [string],
+      type: [String],
       enum: ["company", "product"],
     },
     industry: String,

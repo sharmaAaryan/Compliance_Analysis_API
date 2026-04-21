@@ -3,10 +3,10 @@ import {
   createOrganization,
   getAllCompanies,
 } from "../controllers/organization.controller.js";
-import { protect } from "../middleware/auth.middeware.js";
+import  protect  from "../middleware/auth.middleware.js";
 
 const router = express.Router();
 router.post("/create", protect, createOrganization);
-router.post("/get-companies", getAllCompanies);
+router.get("/get-companies", getAllCompanies);
 
 export default router;
