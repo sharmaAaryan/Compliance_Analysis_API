@@ -6,13 +6,24 @@ import cookieParser from "cookie-parser";
 import frameworkrouter from "./api/routes/framework.route.js";
 import productRouter from "./api/routes/product.routes.js";
 import protect from "./api/middleware/auth.middleware.js";
+import cors from "cors";
 
 dotenv.config();
 const app = express();
 
 //  middlewares:
+//cors...
+app.use (
+    cors({
+        origin:"http://localhost:5173",
+        methods:["GET","POST","PUT","PATCH","DELETE"],
+        credentials:true,
+}),
+);
 app.use(express.json());
 app.use(cookieParser());
+
+
 //  routes:
 app.use("/api/auth", authrouter);
 app.use("/api/organization", organizationrouter);
