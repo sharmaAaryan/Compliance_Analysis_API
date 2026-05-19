@@ -7,9 +7,14 @@ import frameworkrouter from "./api/routes/framework.route.js";
 import productRouter from "./api/routes/product.routes.js";
 import protect from "./api/middleware/auth.middleware.js";
 import cors from "cors";
+import { connectQdrant } from "./config/quadrant.js";
+
+
 
 dotenv.config();
 const app = express();
+
+ connectQdrant();
 
 //  middlewares:
 //cors...
